@@ -11,17 +11,15 @@
   <div class="container">
     <!-- Tab Navigation -->
     <div class="tabs">
-      <button class="tab-button" onclick="openTab('home')">Home</button>
+      <button class="tab-button" onclick="openTab('links')">Links</button>
       <button class="tab-button" onclick="openTab('about')">Über mich</button>
-      <button class="tab-button" onclick="openTab('projects')">Projekte</button>
       <button class="tab-button" onclick="openTab('contact')">Kontakt</button>
     </div>
 
     <!-- Tab Inhalte -->
-    <div id="home" class="tab-content">
+    <div id="links" class="tab-content">
       <section class="hero">
-        <h1>Willkommen auf meiner Website!</h1>
-        <p>Folge mir auf meinen Social Media Kanälen:</p>
+        <h1>Folge mir auf meinen Social Media Kanälen:</h1>
 
         <div class="social-container">
           <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
@@ -43,17 +41,6 @@
         <p>
           Hey! Ich bin ein Creator mit Leidenschaft für Rocket League, TikToks und Community-Projekte.
           Auf YouTube poste ich Highlights, auf TikTok Clips – und auf Discord chillen wir zusammen!
-        </p>
-      </section>
-    </div>
-
-    <div id="projects" class="tab-content" style="display:none;">
-      <section class="projects">
-        <h2>Projekte</h2>
-        <p>
-          ✔ Livestream-Highlights<br />
-          ✔ Community-Events<br />
-          ✔ TikTok Edits mit Trend-Sounds
         </p>
       </section>
     </div>
@@ -82,9 +69,8 @@
       document.getElementById(tabName).style.display = 'block';
     }
 
-    // Standardmäßig den Home-Tab anzeigen
-    openTab('home');
+    // Standardmäßig den Links-Tab anzeigen
+    openTab('links');
   </script>
 </body>
 </html>
-
