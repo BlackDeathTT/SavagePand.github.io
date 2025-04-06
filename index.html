@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Links</title>
+    <!-- Link zu Font Awesome für Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,6 +17,10 @@
         h1 {
             color: #333;
         }
+        p {
+            color: #555;
+            font-size: 18px;
+        }
         .social-links {
             margin-top: 30px;
         }
@@ -21,15 +28,19 @@
             text-decoration: none;
             color: white;
             background-color: #333;
-            padding: 10px 20px;
+            padding: 20px;
             margin: 10px;
-            border-radius: 5px;
+            border-radius: 50%;
             display: inline-block;
-            font-size: 18px;
+            font-size: 30px;
+            transition: background-color 0.3s;
         }
         .social-links a:hover {
             background-color: #555;
         }
+        .social-links a.youtube { background-color: #ff0000; }
+        .social-links a.tiktok { background-color: #000000; }
+        .social-links a.discord { background-color: #7289da; }
     </style>
 </head>
 <body>
@@ -37,9 +48,18 @@
     <p>Hier findest du Links zu meinen Social Media Accounts:</p>
 
     <div class="social-links">
-        <a href="https://www.youtube.com/@SavagePandaRL" target="_blank">YouTube</a>
-        <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank">TikTok</a>
-        <a href="https://discord.gg/AbUbt4ZJq9" target="_blank">Discord</a>
+        <!-- YouTube Icon -->
+        <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <!-- TikTok Icon -->
+        <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank" class="tiktok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <!-- Discord Icon -->
+        <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="discord">
+            <i class="fab fa-discord"></i>
+        </a>
     </div>
 </body>
 </html>
