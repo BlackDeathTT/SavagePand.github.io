@@ -1,45 +1,87 @@
-/* Basic styles for your website */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Basis-Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Sanfter Farbverlauf */
     text-align: center;
+    padding: 50px;
+    color: #fff;
+    min-height: 100vh;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Schatten für den Titel */
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
+p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Schatten für den Text */
 }
 
-nav ul li a {
-    color: white;
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
     text-decoration: none;
 }
 
-section {
-    padding: 20px;
-    margin: 10px;
-    background-color: white;
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+.youtube {
+    background-color: #FF0000;
+}
+
+.tiktok {
+    background-color: #010101;
+}
+
+.discord {
+    background-color: #7289da;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .social-container {
+        gap: 20px;
+    }
+
+    .social-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
 }
