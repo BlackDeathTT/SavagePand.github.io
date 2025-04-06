@@ -9,53 +9,66 @@
 </head>
 <body>
   <div class="container">
-    <!-- Tab Navigation -->
-    <div class="tabs">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
       <button class="tab-button" onclick="openTab('links')">Links</button>
       <button class="tab-button" onclick="openTab('about')">Über mich</button>
+      <button class="tab-button" onclick="openTab('projects')">Projekte</button>
       <button class="tab-button" onclick="openTab('contact')">Kontakt</button>
     </div>
 
-    <!-- Tab Inhalte -->
-    <div id="links" class="tab-content">
-      <section class="hero">
-        <h1>Folge mir auf meinen Social Media Kanälen:</h1>
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div id="links" class="tab-content">
+        <section class="hero">
+          <h1>Folge mir auf meinen Social Media Kanälen:</h1>
+          <div class="social-container">
+            <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank" class="social-icon tiktok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="social-icon discord">
+              <i class="fab fa-discord"></i>
+            </a>
+          </div>
+        </section>
+      </div>
 
-        <div class="social-container">
-          <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
-            <i class="fab fa-youtube"></i>
-          </a>
-          <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank" class="social-icon tiktok">
-            <i class="fab fa-tiktok"></i>
-          </a>
-          <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="social-icon discord">
-            <i class="fab fa-discord"></i>
-          </a>
-        </div>
-      </section>
+      <div id="about" class="tab-content" style="display:none;">
+        <section class="about">
+          <h2>Über mich</h2>
+          <p>
+            Hey! Ich bin ein Creator mit Leidenschaft für Rocket League, TikToks und Community-Projekte.
+            Auf YouTube poste ich Highlights, auf TikTok Clips – und auf Discord chillen wir zusammen!
+          </p>
+        </section>
+      </div>
+
+      <div id="projects" class="tab-content" style="display:none;">
+        <section class="projects">
+          <h2>Projekte</h2>
+          <p>
+            ✔ Livestream-Highlights<br />
+            ✔ Community-Events<br />
+            ✔ TikTok Edits mit Trend-Sounds
+          </p>
+        </section>
+      </div>
+
+      <div id="contact" class="tab-content" style="display:none;">
+        <section class="contact">
+          <h2>Kontakt</h2>
+          <p>Du willst mit mir zusammenarbeiten? Schreib mir über Discord!</p>
+        </section>
+      </div>
     </div>
-
-    <div id="about" class="tab-content" style="display:none;">
-      <section class="about">
-        <h2>Über mich</h2>
-        <p>
-          Hey! Ich bin ein Creator mit Leidenschaft für Rocket League, TikToks und Community-Projekte.
-          Auf YouTube poste ich Highlights, auf TikTok Clips – und auf Discord chillen wir zusammen!
-        </p>
-      </section>
-    </div>
-
-    <div id="contact" class="tab-content" style="display:none;">
-      <section class="contact">
-        <h2>Kontakt</h2>
-        <p>Du willst mit mir zusammenarbeiten? Schreib mir über Discord!</p>
-      </section>
-    </div>
-
-    <footer>
-      <p>&copy; 2025 SavagePandaRL – alle Rechte vorbehalten.</p>
-    </footer>
   </div>
+
+  <footer>
+    <p>&copy; 2025 SavagePandaRL – alle Rechte vorbehalten.</p>
+  </footer>
 
   <script>
     function openTab(tabName) {
