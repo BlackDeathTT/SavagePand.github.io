@@ -1,95 +1,111 @@
-/* Basis-Reset */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Sanfter Farbverlauf */
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; /* Horizontale Zentrierung */
-    align-items: center; /* Vertikale Zentrierung */
-    padding: 50px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(180deg, #1a1a2e, #16213e, #0f3460);
+  color: #fff;
+  line-height: 1.6;
 }
 
 .container {
-    text-align: center;
-    max-width: 800px; /* Maximale Breite für den Inhalt */
-    width: 100%; /* Füllt den verfügbaren Platz */
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 0;
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Schatten für den Titel */
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Schatten für den Text */
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .social-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90px;
-    height: 90px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 2.5rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  color: #fff;
+  transition: 0.3s ease;
+  text-decoration: none;
 }
 
 .social-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .youtube {
-    background-color: #FF0000;
+  background-color: #ff0000;
 }
-
 .tiktok {
-    background-color: #010101;
+  background-color: #000000;
 }
-
 .discord {
-    background-color: #7289da;
+  background-color: #7289da;
 }
 
-/* Responsive Design */
+/* Abschnitte */
+section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f8f8f8;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 2.5rem;
-    }
+  h1 {
+    font-size: 2.2rem;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  h2 {
+    font-size: 1.5rem;
+  }
 
-    .social-container {
-        gap: 20px;
-    }
+  .social-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
 
-    .social-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 }
