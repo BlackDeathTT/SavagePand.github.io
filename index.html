@@ -9,12 +9,17 @@
 </head>
 <body>
   <div class="container">
-    <!-- Sidebar Navigation -->
-    <div class="sidebar">
+    <!-- Sidebar Navigation (Hamburger Menu) -->
+    <div class="sidebar" id="sidebar">
       <button class="tab-button" onclick="openTab('links')">Links</button>
       <button class="tab-button" onclick="openTab('about')">Über mich</button>
       <button class="tab-button" onclick="openTab('projects')">Projekte</button>
       <button class="tab-button" onclick="openTab('contact')">Kontakt</button>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
     </div>
 
     <!-- Main Content Area -->
@@ -72,18 +77,20 @@
 
   <script>
     function openTab(tabName) {
-      // Alle Tab-Inhalte ausblenden
       let tabs = document.querySelectorAll('.tab-content');
       tabs.forEach(tab => {
         tab.style.display = 'none';
       });
 
-      // Den angeklickten Tab anzeigen
       document.getElementById(tabName).style.display = 'block';
     }
 
-    // Standardmäßig den Links-Tab anzeigen
-    openTab('links');
+    openTab('links'); // Standardmäßig Links Tab anzeigen
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active'); // Fügt oder entfernt die Klasse "active"
+    }
   </script>
 </body>
 </html>
