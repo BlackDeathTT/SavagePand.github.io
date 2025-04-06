@@ -1,80 +1,90 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meine Social Media</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Willkommen auf meiner Website!</h1>
-  <p>Folge mir auf meinen Social Media Kanälen:</p>
+  <div class="container">
+    <section class="hero">
+      <h1>Willkommen auf meiner Website!</h1>
+      <p>Folge mir auf meinen Social Media Kanälen:</p>
 
-  <div class="social-container">
-    <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank" class="social-icon tiktok">
-      <i class="fab fa-tiktok"></i>
-    </a>
-    <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="social-icon discord">
-      <i class="fab fa-discord"></i>
-    </a>
+      <div class="social-container">
+        <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank" class="social-icon tiktok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="social-icon discord">
+          <i class="fab fa-discord"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>Über mich</h2>
+      <p>
+        Hey! Ich bin ein Creator mit Leidenschaft für Rocket League, TikToks und Community-Projekte.
+        Auf YouTube poste ich Highlights, auf TikTok Clips – und auf Discord chillen wir zusammen!
+      </p>
+    </section>
+
+    <section class="projects">
+      <h2>Projekte</h2>
+      <p>
+        ✔ Livestream-Highlights<br />
+        ✔ Community-Events<br />
+        ✔ TikTok Edits mit Trend-Sounds
+      </p>
+    </section>
+
+    <section class="contact">
+      <h2>Kontakt</h2>
+      <p>Du willst mit mir zusammenarbeiten? Schreib mir über Discord!</p>
+    </section>
+
+    <!-- 📹 Clip Upload Section -->
+    <section class="clips" id="clips">
+      <h2>Meine Clips</h2>
+      <div class="upload-box">
+        <label for="videoUpload">Clips hochladen:</label><br />
+        <input type="file" id="videoUpload" accept="video/*" multiple />
+      </div>
+      <div id="videoPreview" class="video-preview"></div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 SavagePandaRL – alle Rechte vorbehalten.</p>
+    </footer>
   </div>
 
-  <h2>Clips hochladen</h2>
-  <input type="file" id="videoUpload" accept="video/*" />
-  <button onclick="uploadVideo()">Video hochladen</button>
-  <p id="uploadStatus"></p>
-  
-  <div id="videoPreview"></div>
-
-  <footer>
-    <p>&copy; 2025 SavagePandaRL – alle Rechte vorbehalten.</p>
-  </footer>
-
-  <script src="https://upload.cloudinary.com"></script>
+  <!-- JavaScript für mehrere Video-Uploads -->
   <script>
-    const videoUpload = document.getElementById('videoUpload');
-    const videoPreview = document.getElementById('videoPreview');
-    const uploadStatus = document.getElementById('uploadStatus');
+    const uploadInput = document.getElementById('videoUpload');
+    const preview = document.getElementById('videoPreview');
 
-    function uploadVideo() {
-      const file = videoUpload.files[0];
-      if (!file) {
-        alert("Bitte wählen Sie eine Datei aus!");
-        return;
-      }
-      uploadStatus.textContent = "Hochladen...";
+    uploadInput.addEventListener('change', function () {
+      const files = Array.from(this.files);
 
-      // Cloudinary API URL und FormData für das Hochladen
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', 'SavagePandaRL'); // Dein Upload-Preset von Cloudinary
-      formData.append('cloud_name', 'dkijwvnmx'); // Dein Cloud-Namen
-
-      // Video hochladen zu Cloudinary
-      fetch('https://api.cloudinary.com/v1_1/dkijwvnmx/video/upload', {
-        method: 'POST',
-        body: formData,
-      })
-      .then(response => response.json())
-      .then(data => {
-        uploadStatus.textContent = "Erfolgreich hochgeladen!";
-        const videoUrl = data.secure_url; // URL des hochgeladenen Videos
-        const videoElement = document.createElement('video');
-        videoElement.src = videoUrl;
-        videoElement.controls = true;
-        videoPreview.appendChild(videoElement);
-      })
-      .catch(error => {
-        console.error("Fehler beim Hochladen: ", error);
-        uploadStatus.textContent = "Fehler beim Hochladen!";
+      files.forEach(file => {
+        if (file.type.startsWith('video/')) {
+          const video = document.createElement('video');
+          video.controls = true;
+          video.src = URL.createObjectURL(file);
+          video.classList.add('clip');
+          preview.appendChild(video);
+        }
       });
-    }
+    });
   </script>
 </body>
 </html>
+
 
 <link rel="stylesheet" href="style.css">
