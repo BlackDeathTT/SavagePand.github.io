@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset der Standardwerte */
 * {
   margin: 0;
   padding: 0;
@@ -7,105 +7,137 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(180deg, #1a1a2e, #16213e, #0f3460);
-  color: #fff;
-  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
+  width: 100%;
   max-width: 900px;
-  margin: auto;
-  padding: 50px 20px;
-}
-
-.hero {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
-  padding: 80px 0;
 }
 
-h1 {
-  font-size: 3rem;
+/* Hero-Section */
+.hero {
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: #333;
   margin-bottom: 10px;
 }
 
-p {
+.hero p {
   font-size: 1.2rem;
+  color: #777;
   margin-bottom: 30px;
 }
 
+/* Social Media Buttons */
 .social-container {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 30px;
 }
 
 .social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  font-size: 2.5rem;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background-color: #333;
   color: #fff;
-  transition: 0.3s ease;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .social-icon:hover {
+  background-color: #ff0000;
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .youtube {
   background-color: #ff0000;
 }
+
 .tiktok {
-  background-color: #000000;
+  background-color: #010101;
 }
+
 .discord {
   background-color: #7289da;
 }
 
-/* Abschnitte */
-section {
-  padding: 80px 0;
-  text-align: center;
-}
-
-h2 {
+/* Über mich, Projekte und Kontakt */
+section h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
-  color: #f8f8f8;
+  color: #333;
+  margin-bottom: 15px;
 }
 
+section p, section ul {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.projects ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.projects li {
+  margin-bottom: 10px;
+}
+
+/* Footer */
 footer {
+  margin-top: 50px;
+  font-size: 1rem;
+  color: #888;
   text-align: center;
-  padding: 40px 0;
-  font-size: 0.9rem;
-  color: #aaa;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  h1 {
+/* Responsives Design */
+@media (max-width: 768px) {
+  .hero h1 {
     font-size: 2.2rem;
   }
 
-  h2 {
-    font-size: 1.5rem;
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .social-container {
+    gap: 20px;
   }
 
   .social-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
   }
 
-  p {
+  section h2 {
+    font-size: 1.8rem;
+  }
+
+  section p, section ul {
     font-size: 1rem;
   }
 }
