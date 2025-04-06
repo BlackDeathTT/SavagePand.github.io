@@ -76,6 +76,7 @@
   </footer>
 
   <script>
+    // Funktion, um die Tabs anzuzeigen
     function openTab(tabName) {
       let tabs = document.querySelectorAll('.tab-content');
       tabs.forEach(tab => {
@@ -87,6 +88,7 @@
 
     openTab('links'); // Standardmäßig Links Tab anzeigen
 
+    // Funktion, um die Sidebar (Hamburger Menü) zu toggeln
     function toggleSidebar() {
       const sidebar = document.getElementById('sidebar');
       sidebar.classList.toggle('active'); // Fügt oder entfernt die Klasse "active"
