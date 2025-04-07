@@ -1,4 +1,3 @@
-/* Basis-Styling */
 * {
   margin: 0;
   padding: 0;
@@ -6,154 +5,132 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
-  display: flex;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #1f1c2c, #928dab);
+  color: #fff;
   min-height: 100vh;
-  flex-direction: column;
-}
-
-/* Container */
-.container {
-  display: flex;
-  width: 100%;
-}
-
-/* Sidebar - Navigation */
-.sidebar {
-  width: 250px;
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  height: 100%;
-  top: 0;
-  left: -250px; /* Sidebar initially hidden */
-  transition: left 0.3s ease;
 }
 
-.sidebar.active {
-  left: 0; /* Sidebar sichtbar, wenn aktiv */
-}
-
-.tab-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.tab-button:hover {
-  background-color: #45a049;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
+header {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 30px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
   color: white;
-  font-size: 1.8rem; /* Hamburger-Icon kleiner */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #00ffff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
   cursor: pointer;
-  position: fixed;
-  top: 20px; /* Etwas weiter unten */
-  left: 20px;
-  z-index: 10;
 }
 
-.main-content {
-  margin-left: 0;
-  padding: 20px;
-  width: 100%;
-  transition: margin-left 0.3s ease;
-  margin-top: 50px; /* Platz für das Hamburger-Icon */
+main {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* Tab Content */
 .tab-content {
   display: none;
+  animation: fadeIn 0.5s ease forwards;
 }
 
-.tab-content h1, .tab-content h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+.tab-content.active {
+  display: block;
 }
 
-.tab-content p {
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p, ul {
+  text-align: center;
   font-size: 1.2rem;
-  color: #555;
 }
 
-/* Social Media Icons Styling */
-.social-container {
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.socials {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background-color: #333;
-  color: #fff;
-  border-radius: 50%;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
+.socials a {
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
 }
 
-.social-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+.socials a:hover {
+  transform: scale(1.2);
 }
 
-.youtube {
-  background-color: #FF0000;
+.youtube { color: #ff0000; }
+.tiktok { color: #010101; }
+.discord { color: #7289da; }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  margin-top: auto;
 }
 
-.tiktok {
-  background-color: #010101;
-}
-
-.discord {
-  background-color: #7289da;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .sidebar {
-    width: 200px;
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column;
+    display: none;
   }
 
-  .main-content {
-    margin-left: 220px;
+  .nav.active {
+    display: flex;
   }
 
-  .tab-button {
-    padding: 8px 16px;
-  }
-
-  .social-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-
-  .hamburger-menu {
-    top: 30px; /* Hamburger-Icon weiter unten */
-    left: 20px;
-    font-size: 1.5rem; /* Hamburger-Icon kleiner */
+  .menu-toggle {
+    display: block;
   }
 }
