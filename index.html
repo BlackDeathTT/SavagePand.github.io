@@ -3,95 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meine Social Media</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <title>Creator Hub | SavagePandaRL</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://i.pinimg.com/originals/c5/9b/99/c59b9981d967a923ee6f3cb2d402dc55.png" type="image/png">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Sidebar Navigation (Hamburger Menu) -->
-    <div class="sidebar" id="sidebar">
-      <button class="tab-button" onclick="openTab('links')">Links</button>
-      <button class="tab-button" onclick="openTab('about')">Über mich</button>
-      <button class="tab-button" onclick="openTab('projects')">Projekte</button>
-      <button class="tab-button" onclick="openTab('contact')">Kontakt</button>
-    </div>
-
-    <!-- Hamburger Icon -->
-    <div class="hamburger-menu" onclick="toggleSidebar()">
+  <header>
+    <div class="logo">🎮 SavagePandaRL</div>
+    <div class="menu-toggle" id="menu-toggle">
       <i class="fas fa-bars"></i>
     </div>
+    <nav class="nav" id="nav">
+      <a href="#" onclick="openTab('home')">Home</a>
+      <a href="#" onclick="openTab('about')">Über mich</a>
+      <a href="#" onclick="openTab('projects')">Projekte</a>
+      <a href="#" onclick="openTab('contact')">Kontakt</a>
+    </nav>
+  </header>
 
-    <!-- Main Content Area -->
-    <div class="main-content">
-      <div id="links" class="tab-content">
-        <section class="hero">
-          <h1>Folge mir auf meinen Social Media Kanälen:</h1>
-          <div class="social-container">
-            <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.tiktok.com/@crimsonnovarl" target="_blank" class="social-icon tiktok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="social-icon discord">
-              <i class="fab fa-discord"></i>
-            </a>
-          </div>
-        </section>
+  <main>
+    <!-- Startseite / Social Links -->
+    <section id="home" class="tab-content active">
+      <h1>Willkommen auf meiner Website!</h1>
+      <p>Hier findest du alle meine Kanäle & Projekte</p>
+      <div class="socials">
+        <a href="https://www.youtube.com/@SavagePandaRL" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@crimsonnovarl" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://discord.gg/AbUbt4ZJq9" class="discord" target="_blank"><i class="fab fa-discord"></i></a>
       </div>
+    </section>
 
-      <div id="about" class="tab-content" style="display:none;">
-        <section class="about">
-          <h2>Über mich</h2>
-          <p>
-            Hey! Ich bin ein Creator mit Leidenschaft für Rocket League, TikToks und Community-Projekte.
-            Auf YouTube poste ich Highlights, auf TikTok Clips – und auf Discord chillen wir zusammen!
-          </p>
-        </section>
-      </div>
+    <!-- Über mich -->
+    <section id="about" class="tab-content">
+      <h2>Über mich</h2>
+      <p>Ich bin ein Content-Creator für Rocket League, Edits & Community-Projekte. Folge mir auf meinen Plattformen und sei Teil der Crew!</p>
+    </section>
 
-      <div id="projects" class="tab-content" style="display:none;">
-        <section class="projects">
-          <h2>Projekte</h2>
-          <p>
-            ✔ Livestream-Highlights<br />
-            ✔ Community-Events<br />
-            ✔ TikTok Edits mit Trend-Sounds
-          </p>
-        </section>
-      </div>
+    <!-- Projekte -->
+    <section id="projects" class="tab-content">
+      <h2>Projekte</h2>
+      <ul>
+        <li>🎥 Livestream-Highlights</li>
+        <li>✨ TikTok Edits mit Trendsounds</li>
+        <li>🎉 Community Challenges</li>
+      </ul>
+    </section>
 
-      <div id="contact" class="tab-content" style="display:none;">
-        <section class="contact">
-          <h2>Kontakt</h2>
-          <p>Du willst mit mir zusammenarbeiten? Schreib mir über Discord!</p>
-        </section>
-      </div>
-    </div>
-  </div>
+    <!-- Kontakt -->
+    <section id="contact" class="tab-content">
+      <h2>Kontakt</h2>
+      <p>Für Kooperationen oder Fragen – schreib mir über Discord!</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 SavagePandaRL – alle Rechte vorbehalten.</p>
+    <p>&copy; 2025 SavagePandaRL. Alle Rechte vorbehalten.</p>
   </footer>
 
   <script>
-    // Funktion, um die Tabs anzuzeigen
-    function openTab(tabName) {
-      let tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.style.display = 'none';
-      });
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+    const tabs = document.querySelectorAll('.tab-content');
 
-      document.getElementById(tabName).style.display = 'block';
-    }
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
-    openTab('links'); // Standardmäßig Links Tab anzeigen
-
-    // Funktion, um die Sidebar (Hamburger Menü) zu toggeln
-    function toggleSidebar() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('active'); // Fügt oder entfernt die Klasse "active"
+    function openTab(tabId) {
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      nav.classList.remove('active');
     }
   </script>
 </body>
