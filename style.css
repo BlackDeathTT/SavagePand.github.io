@@ -1,21 +1,26 @@
+/* ===== Allgemein ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: #fff;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 100px 20px 40px; /* Platz oben für Spotify Player */
 }
 
+/* ===== Überschriften ===== */
 h1, h2 {
   color: #00ffff;
-  text-shadow: 0 0 5px #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  text-align: center;
 }
 
+/* ===== Soziale Medien ===== */
 .social-container {
   display: flex;
   justify-content: center;
@@ -24,9 +29,17 @@ h1, h2 {
   flex-wrap: wrap;
 }
 
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s;
+}
+
 .social-icon {
   font-size: 2.5rem;
-  color: #fff;
+  color: #ffffff;
   transition: transform 0.3s, color 0.3s;
 }
 
@@ -35,26 +48,21 @@ h1, h2 {
   color: #00ffff;
 }
 
-.social-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
 .social-item span {
   font-size: 0.9rem;
-  color: #ccc;
+  color: #cccccc;
 }
 
+/* ===== Sektionen ===== */
 section {
   margin-top: 60px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
 }
 
-.weapons {
-  text-align: center;
-}
-
+/* ===== Bildergalerie / Waffenbilder (optional) ===== */
 .weapon-image img {
   max-width: 100%;
   height: auto;
@@ -63,23 +71,20 @@ section {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
-footer {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-}
+/* ===== Links / Realmlink Sektion ===== */
 .realmlink {
   text-align: center;
   padding: 40px 20px;
   background: rgba(255, 255, 255, 0.05);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 60px;
 }
 
 .realmlink h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 15px;
-  color: #fff;
+  color: #00ffff;
 }
 
 .realmlink a {
@@ -88,4 +93,33 @@ footer {
   font-weight: bold;
   display: inline-block;
   margin-top: 8px;
+  transition: color 0.3s;
+}
+
+.realmlink a:hover {
+  color: #ffffff;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .social-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+  }
+
+  .realmlink h2 {
+    font-size: 1.3rem;
+  }
 }
