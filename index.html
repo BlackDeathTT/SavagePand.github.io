@@ -1,467 +1,112 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SavagePandaRL | Solo Leveling Style</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SavagePandaTV – Offizielle Website</title>
+  <meta name="description" content="Die offizielle Website von SavagePandaTV: Gaming & Music, Videos, Bio, Termine und Links." />
+  <meta property="og:title" content="SavagePandaTV – Offizielle Website" />
+  <meta property="og:description" content="Gaming & Music – Schau dir die neuesten Videos an und bleib auf dem Laufenden." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="Savage.jpg" />
+  <meta name="theme-color" content="#ff2e2e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* ===== Solo Leveling Style ===== */
+    :root {
+      --bg: #0b0c10;
+      --card: #12141b;
+      --text: #e6e6e6;
+      --muted: #a7adc0;
+      --primary: #ff2e2e; /* Rot passend zum Profilbild */
+      --secondary: #1a1a1a;
+      --ring: #ffffff1a;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: 
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('https://wallpapercave.com/wp/wp9414537.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      line-height: 1.7;
-      overflow-x: hidden;
-      min-height: 100vh;
+      margin: 0; font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, color-mix(in oklab, var(--secondary), transparent 90%), transparent),
+                  radial-gradient(1200px 800px at 0% 0%, color-mix(in oklab, var(--primary), transparent 88%), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-
-    /* Solo Leveling Border */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, #9a0000, #ff0000, #ff6b6b, #9a0000);
-      background-size: 400% 400%;
-      animation: borderGlow 8s ease infinite;
-      z-index: 1001;
-      box-shadow: 0 0 20px #ff0000;
-    }
-
-    @keyframes borderGlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 120px 20px 40px;
-      position: relative;
-    }
-
-    /* Solo Leveling Dekorative Elemente */
-    .container::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(154, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-      border-radius: 50%;
-      z-index: -1;
-      filter: blur(10px);
-    }
-
-    .container::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: -100px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-      border-radius: 50%;
-      z-index: -1;
-      filter: blur(10px);
-    }
-
-    /* ===== Solo Leveling Überschriften ===== */
-    h1, h2, h3 {
-      font-family: 'Orbitron', sans-serif;
-      color: #ff6b6b;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #9a0000;
-      letter-spacing: 3px;
-      position: relative;
-      animation: textGlow 2s ease-in-out infinite alternate;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      text-transform: uppercase;
-      background: linear-gradient(to right, #ff6b6b, #ffffff, #ff6b6b);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 30px;
-    }
-
-    h1::after, h2::after {
-      content: "";
-      display: block;
-      width: 150px;
-      height: 4px;
-      background: linear-gradient(90deg, #9a0000, #ff0000);
-      margin: 15px auto;
-      border-radius: 2px;
-      box-shadow: 0 0 10px #ff0000;
-    }
-
-    @keyframes textGlow {
-      from { text-shadow: 0 0 10px #ff0000, 0 0 20px #9a0000; }
-      to { text-shadow: 0 0 15px #ff0000, 0 0 30px #9a0000, 0 0 45px #ff6b6b; }
-    }
-
-    /* ===== Solo Leveling Social Media Icons ===== */
-    .social-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .social-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-      position: relative;
-    }
-
-    .social-item:hover {
-      transform: translateY(-10px);
-    }
-
-    .social-icon {
-      font-size: 2.5rem;
-      color: #ffffff;
-      transition: all 0.3s;
-      text-shadow: 0 0 10px #ff0000;
-      position: relative;
-      z-index: 1;
-      background: rgba(154, 0, 0, 0.3);
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #ff6b6b;
-    }
-
-    .social-icon:hover {
-      background: rgba(255, 0, 0, 0.5);
-      box-shadow: 0 0 20px #ff0000;
-      transform: scale(1.1);
-    }
-
-    .social-item span {
-      font-size: 0.9rem;
-      color: #ff6b6b;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-shadow: 0 0 5px #9a0000;
-    }
-
-    /* ===== Solo Leveling Sektionen ===== */
-    section {
-      margin-top: 60px;
-      padding: 30px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 5px;
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
-      border: 1px solid #9a0000;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
-      border-color: #ff6b6b;
-    }
-
-    section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #9a0000, #ff0000);
-    }
-
-    /* ===== Solo Leveling Links ===== */
-    .realmlink {
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 5px;
-      margin-top: 60px;
-      border: 1px solid #9a0000;
-    }
-
-    .realmlink h2 {
-      font-size: 1.6rem;
-      color: #ff6b6b;
-      text-shadow: 0 0 10px #ff0000;
-    }
-
-    .realmlink a {
-      color: #ff6b6b;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 8px;
-      transition: all 0.3s;
-      position: relative;
-      padding-bottom: 2px;
-    }
-
-    .realmlink a::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #9a0000, #ff0000);
-      transition: width 0.3s;
-    }
-
-    .realmlink a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 10px #ffffff;
-    }
-
-    .realmlink a:hover::after {
-      width: 100%;
-    }
-
-    /* ===== Solo Leveling Footer ===== */
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ff6b6b;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 20px;
-      position: relative;
-      background: rgba(0, 0, 0, 0.7);
-      border-top: 1px solid #9a0000;
-    }
-
-    footer::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, #ff0000, transparent);
-    }
-
-    /* ===== Tab-Styling ===== */
-    .tab-container {
-      margin-top: 100px;
-    }
-    
-    .tab-header {
-      display: flex;
-      justify-content: center;
-      margin-bottom: -1px;
-      flex-wrap: wrap;
-    }
-    
-    .tab-button {
-      padding: 12px 24px;
-      background: rgba(0, 0, 0, 0.7);
-      border: 1px solid #9a0000;
-      border-bottom: none;
-      color: #ff6b6b;
-      font-family: 'Orbitron', sans-serif;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-      z-index: 1;
-      margin: 0 5px;
-    }
-    
-    .tab-button:hover {
-      background: rgba(154, 0, 0, 0.5);
-      color: white;
-    }
-    
-    .tab-button.active {
-      background: rgba(0, 0, 0, 0.9);
-      color: white;
-      border-color: #ff0000;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.9);
-      z-index: 2;
-    }
-    
-    .tab-content {
-      display: none;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.8);
-      border: 1px solid #9a0000;
-      border-radius: 0 5px 5px 5px;
-    }
-    
-    .tab-content.active {
-      display: block;
-    }
-    
-    /* Responsive Anpassungen */
-    @media (max-width: 600px) {
-      .container {
-        padding-top: 100px;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.2rem;
-      }
-      
-      .social-container {
-        gap: 15px;
-      }
-      
-      .social-icon {
-        font-size: 1.8rem;
-        width: 50px;
-        height: 50px;
-      }
-      
-      section {
-        padding: 20px;
-      }
-      
-      .tab-button {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-      }
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1100px, 92vw); margin-inline: auto; }
+    .topbar { position: sticky; top: 0; backdrop-filter: blur(10px); background: color-mix(in srgb, var(--bg), transparent 45%); border-bottom: 1px solid var(--ring); }
+    .topbar-inner { display:flex; align-items:center; justify-content:space-between; padding: .75rem 1rem; }
+    .brand { display:flex; align-items:center; gap:.75rem; font-weight:800; }
+    .brand .dot { inline-size:.85rem; block-size:.85rem; border-radius:50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); }
+    .btn { padding:.6rem 1rem; border:1px solid var(--ring); border-radius: 999px; background: #ffffff08; color: var(--text); font-weight:600; cursor:pointer; }
+    .btn.primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); border: none; color: #fff; }
+    .hero { padding: 3rem 0 2rem; }
+    .hero-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items:center; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+    .pfp-wrap { position:relative; place-self:center; }
+    .pfp { inline-size: 220px; block-size: 220px; border-radius: 50%; overflow: hidden; border: 2px solid var(--ring); }
+    h1 { font-size: clamp(2rem, 4.6vw, 3.6rem); margin:.35rem 0 1rem; font-weight: 800; }
+    .bio { color: var(--muted); font-size: 1.1rem; }
+    footer { padding: 2rem 0; color: var(--muted); border-top:1px solid var(--ring); margin-top: 2rem; }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <!-- Tab Navigation -->
-    <div class="tab-container">
-      <div class="tab-header">
-        <button class="tab-button active" onclick="openTab(event, 'main-tab')">Hauptseite</button>
-        <button class="tab-button" onclick="openTab(event, 'links-tab')">Wichtige Links</button>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span id="brandName">SavagePandaTV</span>
       </div>
-      
-      <!-- Haupt-Tab -->
-      <div id="main-tab" class="tab-content active">
-        <section class="hero">
-          <h1>Willkommen auf meiner Website!</h1>
-          <p>Folge mir auf meinen Social Media Kanälen:</p>
-
-          <div class="social-container">
-            <div class="social-item">
-              <a href="https://www.youtube.com/@SavagePandaRL" target="_blank" class="social-icon youtube">
-                <i class="fab fa-youtube"></i>
-              </a>
-              <span>YouTube</span>
-            </div>
-            <div class="social-item">
-              <a href="https://www.tiktok.com/@savagepandarl" target="_blank" class="social-icon tiktok">
-                <i class="fab fa-tiktok"></i>
-              </a>
-              <span>TikTok</span>
-            </div>
-            <div class="social-item">
-              <a href="https://discord.gg/AbUbt4ZJq9" target="_blank" class="social-icon discord">
-                <i class="fab fa-discord"></i>
-              </a>
-              <span>SavagePandaRL</span>
-            </div>
-            <div class="social-item">
-              <a href="https://discord.gg/Qan6hJVwFQ" target="_blank" class="social-icon discord">
-                <i class="fab fa-discord"></i>
-              </a>
-              <span>Soul World</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="about">
-          <h2>Über mich</h2>
-          <p>
-            Hey! Ich bin ein Creator mit Leidenschaft für Rocket League, TikToks und Community-Projekte.
-            Auf YouTube poste ich Highlights, auf TikTok Clips – und auf Discord chillen wir zusammen!
-          </p>
-        </section>
-
-        <section class="projects">
-          <h2>Projekte</h2>
-          <p>
-            ✔ Livestream-Highlights<br />
-            ✔ Community-Events<br />
-            ✔ TikTok Edits mit Trend-Sounds
-          </p>
-        </section>
-      </div>
-      
-      <!-- Links Tab -->
-      <div id="links-tab" class="tab-content">
-        <section class="realmlink">
-          <h2>Mehr entdecken</h2>
-          <p>
-            🌐 Besuche diese Website für custom swords name:<br>
-            <a href="https://realm-of-majestica.webflow.io/" target="_blank">
-              realm-of-majestica.webflow.io
-            </a>
-          </p>
-          <p>
-            ⬇️ Lade dir mein Minecraft TexturePack herunter:<br>
-            <a href="https://www.mediafire.com/file/vnezxxwn7ag3tec/Zenith_1.21%252B_no_1.21.4.zip/file" target="_blank">
-              Zenith TexturePack Download (MediaFire)
-            </a>
-          </p>
-        </section>
-        
-        <section class="contact">
-          <h2>Kontakt</h2>
-          <p>Du willst mit mir zusammenarbeiten? Schreib mir über Discord!</p>
-        </section>
+      <div class="actions">
+        <a class="btn" id="ytLink" href="https://youtube.com/@SavagePandaTV" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn primary" href="#videos">Neueste Videos</a>
       </div>
     </div>
+  </header>
 
-    <footer>
-      <p>&copy; 2025 SavagePandaRL – alle Rechte vorbehalten.</p>
-    </footer>
-  </div>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 id="headline">Hey, ich bin SavagePandaTV 👋</h1>
+        <p class="bio">Creator | Gaming 🎮 & Music 🎵 | Neue Uploads jeden Freitag</p>
+        <div class="quick">
+          <a class="btn primary" href="#subscribe">Abonnieren</a>
+          <a class="btn" href="#about">Über mich</a>
+          <a class="btn" href="#contact">Kontakt</a>
+        </div>
+      </div>
+      <div class="pfp-wrap">
+        <figure class="pfp">
+          <img id="profileImg" src="Savage.jpg" alt="Profilbild von SavagePandaTV" />
+        </figure>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Tab-Wechsel Funktion
-  function openTab(evt, tabName) {
-    var tabcontents = document.getElementsByClassName("tab-content");
-    for (var i = 0; i < tabcontents.length; i++) {
-      tabcontents[i].classList.remove("active");
-    }
-    
-    var tabbuttons = document.getElementsByClassName("tab-button");
-    for (var i = 0; i < tabbuttons.length; i++) {
-      tabbuttons[i].classList.remove("active");
-    }
-    
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
-</script>
+  <section id="about" class="section container">
+    <h2>Über mich</h2>
+    <p>Hi! Ich bin SavagePandaTV. Auf meinem Kanal gibt’s Gaming-Highlights und Music-Content. Meine Mission: Entertainment, Kreativität und gute Vibes. Check die <a href="#videos">neuesten Videos</a> oder abonniere direkt!</p>
+  </section>
+
+  <section id="videos" class="section container">
+    <h2>Neueste Videos</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> SavagePandaTV • Alle Rechte vorbehalten</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
+</html>
+
+</body>
+
 </html>
